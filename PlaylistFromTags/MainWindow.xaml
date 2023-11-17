@@ -1,0 +1,96 @@
+﻿<Window x:Class="PlaylistFromTags.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlaylistFromTags"
+        mc:Ignorable="d"
+        Title="Playlist From Tags" Height="615.974" Width="971.398" ResizeMode="NoResize">
+    <Grid>
+
+        <Label x:Name="lblApplication" Content="Music Folder" HorizontalAlignment="Left" Margin="6,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbMusicFolder" HorizontalAlignment="Left" Height="23" Margin="89,30,0,0" VerticalAlignment="Top" Width="284" TextChanged="textBox_TextChanged"  IsReadOnly="True" Text="D:\Users\Michael\Music\MP3 - Artist\"/>
+        <Button x:Name="btnMusicBrowse" Content="Browse" HorizontalAlignment="Left" Height="23" Margin="378,30,0,0" VerticalAlignment="Top" Width="93" Click="btnLaunchBrowse_Click"/>
+        <Button x:Name="btnCreate" Content="Create All" HorizontalAlignment="Left" Margin="589,31,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnCreate_Click" Height="23"/>
+        <Menu x:Name="menu" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Load Playlist Config" Click="MenuItem_LoadSmartPlaylist"  />
+                <MenuItem Header="Save Playlist Config" Click="MenuItem_SaveSmartPlaylist"  />
+                <Separator />
+                <MenuItem Header="_Exit" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="Cut" />
+                <MenuItem Command="Copy" />
+                <MenuItem Command="Paste" />
+            </MenuItem>
+
+        </Menu>
+        <StatusBar Margin="0,543,0,0">
+            <StatusBarItem Margin="0,0,0,10">
+                <TextBlock Name="lblStatusInformation" />
+            </StatusBarItem>
+        </StatusBar>
+        <GroupBox x:Name="gbPlayListData" Header="Play LIst" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="945" Height="443">
+            <Grid HorizontalAlignment="Left" Margin="10,10,-2,1" Width="595">
+
+                <GroupBox x:Name="gbPerformers" Header="Performers" HorizontalAlignment="Left" Margin="302,10,0,0" VerticalAlignment="Top" Height="193" Width="287">
+                    <Grid HorizontalAlignment="Left" Margin="10,10,-2,1" Width="267">
+                        <ListBox x:Name="lbPerformers" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.39,0.2">
+                        </ListBox>
+                        <TextBox x:Name="tbAddPerformer" HorizontalAlignment="Left" Height="23" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+                        <Button x:Name="btnAddPerformer" Content="Add" HorizontalAlignment="Left" Margin="184,127,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnAddArtist_Click"/>
+                        <Button x:Name="btnDelPerformer" Content="Delete" HorizontalAlignment="Left" Margin="184,90,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnDelArtist_Click"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="gbPlayListFile" Header="Playlist File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="145" Width="287">
+                    <Grid Margin="10,10,-2,6">
+                        <TextBox x:Name="tbPlaylistFile" HorizontalAlignment="Left" Height="23" Margin="0,46,0,0" VerticalAlignment="Top" Width="257" TextChanged="textBox_TextChanged"  IsReadOnly="True"/>
+                        <Button x:Name="btnPlaylistBrowse" Content="Browse" HorizontalAlignment="Left" Height="23" Margin="182,74,0,0" VerticalAlignment="Top" Width="75" Click="btnPlaylistBrowse_Click"/>
+                        <TextBox x:Name="tbPlaylistId" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" VerticalAlignment="Top" Width="257" TextChanged="textBox_TextChanged"  IsReadOnly="True" AllowDrop="False" IsEnabled="False"/>
+                        <Button x:Name="btnSavePlaylist" Content="Update" HorizontalAlignment="Left" Height="23" Margin="0,74,0,0" VerticalAlignment="Top" Width="75" Click="btnSavePlaylist_Click"/>
+
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox x:Name="gbAlbumArtists" Header="Album Artists" HorizontalAlignment="Left" Margin="302,208,0,-17" VerticalAlignment="Top" Height="193" Width="287">
+                    <Grid HorizontalAlignment="Left" Margin="10,10,-2,1" Width="267">
+                        <ListBox x:Name="lbAlbumArtists" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.39,0.2">
+                        </ListBox>
+                        <TextBox x:Name="tbAddAlbumArtist" HorizontalAlignment="Left" Height="23" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+                        <Button x:Name="btnAddAlbumArtist" Content="Add" HorizontalAlignment="Left" Margin="184,127,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnAddAlbumArtist_Click"/>
+                        <Button x:Name="btnDelAlbumArtist" Content="Delete" HorizontalAlignment="Left" Margin="184,90,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnDelAlbumArtist_Click"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox x:Name="gbAlbums" Header="Albums" HorizontalAlignment="Left" Margin="607,10,-299,0" VerticalAlignment="Top" Height="193" Width="287">
+                    <Grid HorizontalAlignment="Left" Margin="10,10,-2,1" Width="267">
+                        <ListBox x:Name="lbAlbums" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.39,0.2"/>
+                        <TextBox x:Name="tbAddAlbum" HorizontalAlignment="Left" Height="23" Margin="10,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
+                        <Button x:Name="btnAddAlbum" Content="Add" HorizontalAlignment="Left" Margin="184,127,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnAddAlbum_Click"/>
+                        <Button x:Name="btnDelAlbum" Content="Delete" HorizontalAlignment="Left" Margin="184,90,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.302,0.376" Click="btnDelAlbum_Click"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox x:Name="gbRating" Header="Rating" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="145" Width="117">
+                    <Grid HorizontalAlignment="Left" Height="108" Margin="10,10,-2,0" VerticalAlignment="Top" Width="97">
+                        <CheckBox x:Name="cb1Star" Content="1 Star" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="cb2Star" Content="2 Stars" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="cb3Star" Content="3 Stars" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="cb4Star" Content="4 Stars" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="cb5Star" Content="5 Stars" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="gbRating_Copy" Header="Options" HorizontalAlignment="Left" Margin="180,170,0,0" VerticalAlignment="Top" Height="145" Width="117">
+                    <Grid HorizontalAlignment="Left" Height="108" Margin="10,10,-2,0" VerticalAlignment="Top" Width="97">
+                        <CheckBox x:Name="cbShuffle" Content="Shuffle" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+        <ComboBox x:Name="comboPlaylist" HorizontalAlignment="Left" Margin="89,68,0,0" VerticalAlignment="Top" Width="284" SelectionChanged="comboPlaylist_SelectionChanged"/>
+        <Button x:Name="btnAddPlaylist" Content="Add" HorizontalAlignment="Left" Margin="378,68,0,0" VerticalAlignment="Top" Width="75" Click="btnAddPlaylist_Click"/>
+        <Button x:Name="btnRemovePlaylist" Content="Remove" HorizontalAlignment="Left" Margin="458,68,0,0" VerticalAlignment="Top" Width="75" Click="btnRemovePlaylist_Click"/>
+
+    </Grid>
+</Window>

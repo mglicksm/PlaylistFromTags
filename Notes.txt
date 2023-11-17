@@ -1,0 +1,11 @@
+TODO:
+Allow command-line operation so that .spl file can be loaded and then .m3u8 can be output.
+
+Process multiple .spl during one folder scan.
+
+Set 'max' for playlist, break up automatically based on max (ie Favoriates_1, Favorites_2, etc.)
+
+Bug:
+Mixing 'album artist' and 'performers' doesn't work as expected, might be 'AND' instead of 'OR' behavior. Due to 'skipFile = true;' in album artists loop.
+
+Need to search all tagged performers instead of just 'FirstPerformer'
