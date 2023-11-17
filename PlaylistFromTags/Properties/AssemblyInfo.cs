@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("PlaylistFromTags")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Oracle Corporation")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PlaylistFromTags")]
-[assembly: AssemblyCopyright("Copyright © Oracle Corporation 2018")]
+[assembly: AssemblyCopyright("Copyright © Michael Glicksman 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
