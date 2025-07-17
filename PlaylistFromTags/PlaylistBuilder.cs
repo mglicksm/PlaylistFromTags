@@ -110,6 +110,12 @@ namespace PlaylistFromTags
             {
                 logBuilder.Append("Writing \"" + bi.spl.PlaylistName + "\" | " + bi.playList.Count.ToString() + "\n");
                 bi.playList.Sort();     // Sort by position
+                if (bi.spl.Limit100)
+                {
+                    // Truncate the list to 100 items only
+                    if (bi.playList.Count > 100)
+                        bi.playList.RemoveRange(100,  (bi.playList.Count - 100));
+                }
                 bi.WriteM3U();
             }
 

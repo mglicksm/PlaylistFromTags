@@ -84,6 +84,7 @@
                 <GroupBox x:Name="gbRating_Copy" Header="Options" HorizontalAlignment="Left" Margin="180,170,0,0" VerticalAlignment="Top" Height="145" Width="117">
                     <Grid HorizontalAlignment="Left" Height="108" Margin="10,10,-2,0" VerticalAlignment="Top" Width="97">
                         <CheckBox x:Name="cbShuffle" Content="Shuffle" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="cbLimit100" Content="Limit100" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
             </Grid>

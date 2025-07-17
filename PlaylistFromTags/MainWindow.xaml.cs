@@ -173,6 +173,7 @@ namespace PlaylistFromTags
                 newSmartPlayList.Ratings[4] = (bool)cb5Star.IsChecked == true;
 
                 newSmartPlayList.Shuffle = (bool)cbShuffle.IsChecked == true;
+                newSmartPlayList.Limit100 = (bool)cbLimit100.IsChecked == true;
 
                 newSmartPlayList.Artists = new string[lbPerformers.Items.Count];
                 for (int i = 0; i < (int)newSmartPlayList.Artists.Count(); i++)
@@ -282,6 +283,7 @@ namespace PlaylistFromTags
             }
 
             cbShuffle.IsChecked = currentSmartPlaylist.Shuffle;
+            cbLimit100.IsChecked = currentSmartPlaylist.Limit100;
 
             lbAlbumArtists.Items.Clear();
 

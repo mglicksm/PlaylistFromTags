@@ -2,3 +2,5 @@
 *.pdb
 *.user
 .vs/PlaylistFromTags/v14/.suo
+/PlaylistFromTags/bin
+/PlaylistFromTags/obj

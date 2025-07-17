@@ -18,6 +18,7 @@ namespace PlaylistFromTags
         public string[] Albums { get; set; }
         public bool [] Ratings { get; set;  }
         public bool Shuffle { get; set; }
+        public bool Limit100 { get; set; }
 
         public int GenerateRandomNumber()
         {
